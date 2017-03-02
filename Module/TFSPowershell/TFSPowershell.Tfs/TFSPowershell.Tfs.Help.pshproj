@@ -1,0 +1,478 @@
+<?xml version="1.0"?>
+<ModuleObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" fVersion="1.1" type="Script" mclass="Module" useSupports="false">
+  <Name>TFSPowershell.Tfs</Name>
+  <Version>0.0</Version>
+  <Description />
+  <HasManifest>false</HasManifest>
+  <OverridePostCount>false</OverridePostCount>
+  <FetchPostCount xsi:nil="true" />
+  <Cmdlets>
+    <CmdletObject verb="Get" noun="AllTFSAlerts">
+      <Name>Get-AllTFSAlerts</Name>
+      <Syntax>
+        <string>Get-AllTFSAlerts [[-CollectionUrl] &lt;String&gt;] [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Gets all TFS Alerts.</Synopsis>
+        <Description>Gets all TFS Alerts of a Team Project Collection.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Get" noun="GlobalLists">
+      <Name>Get-GlobalLists</Name>
+      <Syntax>
+        <string>Get-GlobalLists [[-CollectionUrl] &lt;String&gt;] [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Gets the Global list of the collection.</Synopsis>
+        <Description>Gets the Global list xml of the collection.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Get" noun="TeamProject">
+      <Name>Get-TeamProject</Name>
+      <Syntax>
+        <string>Get-TeamProject [[-CollectionUrl] &lt;String&gt;] [-TeamProjectName] &lt;String&gt; [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Gets the Team Project object.</Synopsis>
+        <Description>Retrieve the object thats represents a Team Project.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl TeamProjectName Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>TeamProjectName</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The name of the Team Project to be retrieved.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Get" noun="TeamProjectCollection">
+      <Name>Get-TeamProjectCollection</Name>
+      <Syntax>
+        <string>Get-TeamProjectCollection [-CollectionUrl] &lt;String&gt;</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Gets the Team Project Collection.</Synopsis>
+        <Description>Retrieves the object that represents a Team Project Collection.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. </Description>
+          <DefaultValue />
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="New" noun="TFSAlert">
+      <Name>New-TFSAlert</Name>
+      <Syntax>
+        <string>New-TFSAlert [[-CollectionUrl] &lt;String&gt;] [-AlertName] &lt;String&gt; [-SubscriberAccountName] &lt;String&gt; [-FilterExpression] &lt;String&gt; [-EventType] &lt;String&gt; [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Creates a new TFS Alert.</Synopsis>
+        <Description>Creates a new TFS Alert for a specific collection.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl AlertName SubscriberAccountName FilterExpression EventType Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>AlertName</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The name of the alert.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>SubscriberAccountName</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The user or group that will subscribe to the alert.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="3" globbing="false">
+          <Name>FilterExpression</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The filter expression used by the alert. 
+Ex:
+  "CoreFields/StringFields/Field[Name='Area Path']/NewValue" = '\AreaPath' AND 
+  "CoreFields/StringFields/Field[Name='Authorized As']/NewValue" &lt;&gt; '@@MyDisplayName@@' AND 
+  ("CoreFields/StringFields/Field[Name='Work Item Type']/NewValue" = 'Requirement' OR 
+   "CoreFields/StringFields/Field[Name='Work Item Type']/NewValue" = 'Issue' OR 
+   "CoreFields/StringFields/Field[Name='Work Item Type']/NewValue" = 'Bug') AND 
+   " ""CoreFields/StringFields/Field[Name='State']/NewValue"" &lt;&gt; ""CoreFields/StringFields/Field[Name='State']/OldValue"" "</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="4" globbing="false">
+          <Name>EventType</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The name of the event that will be subscribed. Ex.: "WorkItemChangedEvent"</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="true" pos="5" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>
+An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Remove" noun="TFSAlert">
+      <Name>Remove-TFSAlert</Name>
+      <Syntax>
+        <string>Remove-TFSAlert [[-CollectionUrl] &lt;String&gt;] [-AlertName] &lt;String&gt; [-SubscriberAccountName] &lt;String&gt; [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Removes a TFS Alert.</Synopsis>
+        <Description>Removes a TFS Alert by its name. </Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl AlertName SubscriberAccountName Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>AlertName</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The name of the alert.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>SubscriberAccountName</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The user or group that subscribe to the alert.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="true" pos="3" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Remove" noun="TFSAlertById">
+      <Name>Remove-TFSAlertById</Name>
+      <Syntax>
+        <string>Remove-TFSAlertById [[-CollectionUrl] &lt;String&gt;] [-Id] &lt;Int32&gt; [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Removes a TFS alert by its Id.</Synopsis>
+        <Description>Removes a TFS alert by its Id.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl Id Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="Int32" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="true" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>Id</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The Id of the TFS Alert to be removed.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+    <CmdletObject verb="Set" noun="GlobalLists">
+      <Name>Set-GlobalLists</Name>
+      <Syntax>
+        <string>Set-GlobalLists [[-CollectionUrl] &lt;String&gt;] [-GlobalLists] &lt;String&gt; [[-Tfs] &lt;TfsTeamProjectCollection&gt;]</string>
+      </Syntax>
+      <GeneralHelp>
+        <Synopsis>Replace the global list of a collection.</Synopsis>
+        <Description>Replace the global list of a collection, in the form of a XML string.</Description>
+        <Notes />
+        <InputType />
+        <InputUrl />
+        <InputTypeDescription />
+        <ReturnType />
+        <ReturnUrl />
+        <ReturnTypeDescription />
+      </GeneralHelp>
+      <ParamSets>
+        <CommandParameterSetInfo2 Name="__AllParameterSets" Params="CollectionUrl GlobalLists Tfs Verbose Debug ErrorAction WarningAction ErrorVariable WarningVariable OutVariable OutBuffer PipelineVariable" />
+      </ParamSets>
+      <Parameters>
+        <ParameterDescription type="String" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="0" globbing="false">
+          <Name>CollectionUrl</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+ </Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="String" varLen="false" required="true" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="1" globbing="false">
+          <Name>GlobalLists</Name>
+          <Attributes>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+            <string>System.Management.Automation.ParameterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>Xml string of the global list to be imported.</Description>
+          <DefaultValue />
+        </ParameterDescription>
+        <ParameterDescription type="TfsTeamProjectCollection" varLen="false" required="false" dynamic="false" pipeRemaining="false" pipe="false" pipeProp="false" isPos="true" pos="2" globbing="false">
+          <Name>Tfs</Name>
+          <Attributes>
+            <string>System.Management.Automation.ParameterAttribute</string>
+            <string>System.Management.Automation.ArgumentTypeConverterAttribute</string>
+          </Attributes>
+          <Aliases />
+          <Description>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.</Description>
+          <DefaultValue>$null</DefaultValue>
+        </ParameterDescription>
+      </Parameters>
+      <Examples />
+      <RelatedLinks />
+      <SupportInformation ad="false" rsat="false" ps2="false" ps3="false" ps4="false" ps5="false" wxp="false" wv="false" w7="false" w8="false" w81="false" w10="false" w2k3s="false" w2k3e="false" w2k3d="false" w2k8s="false" w2k8e="false" w2k8d="false" w2k8r2s="false" w2k8r2e="false" w2k8r2d="false" w2k12s="false" w2k12d="false" w2k12r2s="false" w2k12r2d="false" />
+      <Publish>false</Publish>
+    </CmdletObject>
+  </Cmdlets>
+</ModuleObject>
