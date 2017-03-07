@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns="http://msh" schema="maml">
+
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-Team</command:name>
+<command:verb>Get</command:verb>
+<command:noun>Team</command:noun>
+<maml:description><maml:para>Gets the Team information.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Retrieve the object representing the Team.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-Team</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project Name where the Team belongs.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamName</maml:name>
+<maml:Description><maml:para>The name of the team to be retrieved.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project Name where the Team belongs.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamName</maml:name>
+<maml:Description><maml:para>The name of the team to be retrieved.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-TeamSettings</command:name>
+<command:verb>Get</command:verb>
+<command:noun>TeamSettings</command:noun>
+<maml:description><maml:para>Gets the team settings.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Gets the settings of the team: BacklogIterationPath, CurrentIteratinPath, IterationPaths, TeamField, etc (https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.processconfiguration.client(v=vs.110).aspx)
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-TeamSettings</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The object representing the Team. You can use Get-Team to retrieve this object.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The object representing the Team. You can use Get-Team to retrieve this object.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>New-Area</command:name>
+<command:verb>New</command:verb>
+<command:noun>Area</command:noun>
+<maml:description><maml:para>Creates a new Area.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Creates a new Area.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>New-Area</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project name where the new area will belong.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaName</maml:name>
+<maml:Description><maml:para>The name of the area.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>ParentPath</maml:name>
+<maml:Description><maml:para>The parent area path, if exists, from the team project name, including '\'.  Ex: If the parent area path is '\TeamProjectName\MyParentArea' so you have to inform '\MyParentArea'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project name where the new area will belong.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaName</maml:name>
+<maml:Description><maml:para>The name of the area.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>ParentPath</maml:name>
+<maml:Description><maml:para>The parent area path, if exists, from the team project name, including '\'.  Ex: If the parent area path is '\TeamProjectName\MyParentArea' so you have to inform '\MyParentArea'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>New-Iteration</command:name>
+<command:verb>New</command:verb>
+<command:noun>Iteration</command:noun>
+<maml:description><maml:para>Creates a new Iteration.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Creates a new Iteration.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>New-Iteration</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name of the team project.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationName</maml:name>
+<maml:Description><maml:para>The name of the new iteration.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>ParentPath</maml:name>
+<maml:Description><maml:para>The parent iteration path, if exists, from the team project name, including '\'.  Ex: If the parent iteration path is '\TeamProjectName\MyParentIteration' so you have to inform '\MyParentIteration'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name of the team project.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationName</maml:name>
+<maml:Description><maml:para>The name of the new iteration.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>ParentPath</maml:name>
+<maml:Description><maml:para>The parent iteration path, if exists, from the team project name, including '\'.  Ex: If the parent iteration path is '\TeamProjectName\MyParentIteration' so you have to inform '\MyParentIteration'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>New-Team</command:name>
+<command:verb>New</command:verb>
+<command:noun>Team</command:noun>
+<maml:description><maml:para>Creates a new Team.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Creates a new Team.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>New-Team</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project  name.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamName</maml:name>
+<maml:Description><maml:para>The name of the new Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Description</maml:name>
+<maml:Description><maml:para>The description of the Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>TeamProject</maml:name>
+<maml:Description><maml:para>An instance of the object that represents a TeamProject. If informed the TeamProjectName will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+<dev:type><maml:name>Object</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The Team Project  name.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamName</maml:name>
+<maml:Description><maml:para>The name of the new Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Description</maml:name>
+<maml:Description><maml:para>The description of the Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>TeamProject</maml:name>
+<maml:Description><maml:para>An instance of the object that represents a TeamProject. If informed the TeamProjectName will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+<dev:type><maml:name>Object</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Remove-Area</command:name>
+<command:verb>Remove</command:verb>
+<command:noun>Area</command:noun>
+<maml:description><maml:para>Removes the area.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Removes the area and links any related workitem to the parent area node.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Remove-Area</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name os the Team Project where the area belongs.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaPathWithoutTeamProjectName</maml:name>
+<maml:Description><maml:para>Area path from the team project name. Ex.: being area path 'teamproject\area\sub-are'a so you have to inform '\area\sub-area'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name os the Team Project where the area belongs.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaPathWithoutTeamProjectName</maml:name>
+<maml:Description><maml:para>Area path from the team project name. Ex.: being area path 'teamproject\area\sub-are'a so you have to inform '\area\sub-area'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Remove-Iteration</command:name>
+<command:verb>Remove</command:verb>
+<command:noun>Iteration</command:noun>
+<maml:description><maml:para>Removes the iteration.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Removes the iteration and links any related workitem to the parent iteration node.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Remove-Iteration</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name of the team project.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationPathWithoutTeamProjectName</maml:name>
+<maml:Description><maml:para>Iteration path from the Team Project name. Ex.: beeing iteration path 'teamproject\Iteration0\Sprint1' so you have to inform '\Iteration0\Sprint1'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
+<maml:Description><maml:para>The name of the team project.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationPathWithoutTeamProjectName</maml:name>
+<maml:Description><maml:para>Iteration path from the Team Project name. Ex.: beeing iteration path 'teamproject\Iteration0\Sprint1' so you have to inform '\Iteration0\Sprint1'.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Set-TeamDefaultAreaAndIteration</command:name>
+<command:verb>Set</command:verb>
+<command:noun>TeamDefaultAreaAndIteration</command:noun>
+<maml:description><maml:para>Sets the default Area and Iteration for a Team.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Sets the default Area and Iteration for a Team.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Set-TeamDefaultAreaAndIteration</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The TeamFoundatinTeam object that represents a team. Can be retrieved by the function Get-Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationPath</maml:name>
+<maml:Description><maml:para>The full iteration path (including the team project). Ex.: "\TeamProjectName\IterationPath"
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>AreaPath</maml:name>
+<maml:Description><maml:para>The full area path (including the team project). Ex.: "\TeamProjectName\AreaPath"
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The TeamFoundatinTeam object that represents a team. Can be retrieved by the function Get-Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>IterationPath</maml:name>
+<maml:Description><maml:para>The full iteration path (including the team project). Ex.: "\TeamProjectName\IterationPath"
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>AreaPath</maml:name>
+<maml:Description><maml:para>The full area path (including the team project). Ex.: "\TeamProjectName\AreaPath"
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Set-TeamSettings</command:name>
+<command:verb>Set</command:verb>
+<command:noun>TeamSettings</command:noun>
+<maml:description><maml:para>Set the Team Settings for a Team.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Sets the settings of the team: BacklogIterationPath, CurrentIteratinPath, IterationPaths, TeamField, etc (https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.processconfiguration.client(v=vs.110).aspx)
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Set-TeamSettings</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamId</maml:name>
+<maml:Description><maml:para>The guid that identifies the Team. Can be retrieved by the fuction Get-Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Guid</command:parameterValue>
+<dev:type><maml:name>Guid</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamSettings</maml:name>
+<maml:Description><maml:para>The TeamSettings object with the setting to be set for the Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamSettings</command:parameterValue>
+<dev:type><maml:name>TeamSettings</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamId</maml:name>
+<maml:Description><maml:para>The guid that identifies the Team. Can be retrieved by the fuction Get-Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Guid</command:parameterValue>
+<dev:type><maml:name>Guid</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TeamSettings</maml:name>
+<maml:Description><maml:para>The TeamSettings object with the setting to be set for the Team.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamSettings</command:parameterValue>
+<dev:type><maml:name>TeamSettings</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Update-Team</command:name>
+<command:verb>Update</command:verb>
+<command:noun>Team</command:noun>
+<maml:description><maml:para>Updates team informations.
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Updates team informations.
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Update-Team</maml:name>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The Team object to be updated.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Team</maml:name>
+<maml:Description><maml:para>The Team object to be updated.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TeamFoundationTeam</command:parameterValue>
+<dev:type><maml:name>TeamFoundationTeam</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>Tfs</maml:name>
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
+<dev:type><maml:name>TfsTeamProjectCollection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+</helpItems>
