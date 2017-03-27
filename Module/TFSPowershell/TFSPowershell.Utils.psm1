@@ -23,3 +23,26 @@ Function Get-RestApiCredentials
 	
     return $credentials
 }
+
+# .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
+Function Set-RestApiCredentials
+{
+	Param()
+	$credentials = Get-Credential
+	$username = $credentials.UserName
+	$user = $username.Replace("\","-")
+
+	$fileName = "restcreds`_$env:COMPUTERNAME.xml"
+	$credentials | Export-Clixml "$rootPath\$fileName"
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
+Function Set-TFSPowershellTempDir
+{
+	Param(
+		[Parameter(mandatory=$true)]
+		[string] $TFSPowershellTempDirLocation
+	)
+	Write-Verbose "Creating environment variable 'TFSPowershellTempDirLocation'..."
+	[Environment]::SetEnvironmentVariable("TFSPowershellTempDirLocation", $TFSPowershellTempDirLocation, "Machine")
+}

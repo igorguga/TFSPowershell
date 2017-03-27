@@ -21,10 +21,10 @@ Function Set-AreaPermissions
         [Parameter(mandatory=$true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true,HelpMessage ="Caminho da area, sem incluir o team project (Ex.: \Area 1\Sub-area 3).")]
+        [Parameter(mandatory=$true,HelpMessage ="Area path without the Team Project.(Ex.: \Area 1\Sub-area 3).")]
         [string] $AreaPath,
         
-        [Parameter(mandatory=$true, HelpMessage ="Usu�rios ou grupos para conceder a permiss�o.")]
+        [Parameter(mandatory=$true, HelpMessage ="Users and/or groups to grant permissions.")]
         [string []] $Members,
 
         [Parameter(mandatory=$true,HelpMessage ="WORK_ITEM_READ,WORK_ITEM_WRITE,GENERIC_READ,GENERIC_WRITE,CREATE_CHILDREN,DELETE,MANAGE_TEST_PLANS")]
