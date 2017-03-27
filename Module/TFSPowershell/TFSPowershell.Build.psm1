@@ -279,6 +279,86 @@ Function Get-BuildDefinition
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Get-BuildDefinitionsFromTeamProject
+{
+    [CmdletBinding()]
+    Param (
+        [Parameter(mandatory=$true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory=$true)]
+        [string] $TeamProjectName,
+
+        [Parameter(HelpMessage="Filters to definitions whose names equal this value. Append a * to filter to definitions whose names start with this value. For example: MS*.")]
+        [string] $nameFilter,
+
+        [Parameter(HelpMessage="The type of the build definitions to retrieve. If not specified, all types will be returned.")]
+        [ValidateSet('build','xaml')]
+        [string] $typeFilter,
+
+		[pscredential] $Credentials = $null
+    )
+    
+	Begin
+    {
+		if (!$Credentials)
+		{
+			$Credentials = Get-RestApiCredentials 
+		}
+    }
+	End
+    {       
+		Write-Verbose "Retrieving build definitions from Team Project $TeamProjectName..." 
+
+        $filters =""
+        if ($nameFilter) {$filters += "&name=$nameFilter"}
+        if ($typeFilter) {$filters += "&type=$typeFilter"}
+
+        $getUrl = "{0}/{1}/_apis/build/definitions?api-version={2}{3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$filters     
+        return Invoke-RestMethod -Credential $Credentials -Uri $getUrl -Method "GET"
+    }
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Update-BuildDefinition
+{
+    [CmdletBinding()]
+    Param (
+        [Parameter(mandatory=$true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory=$true)]
+        [string] $TeamProjectName,
+
+        [Parameter(mandatory=$true)]
+        [int] $DefinitionId,
+
+        [Parameter(mandatory=$true)]
+        [string] $BuildDefinitionJsonBody,
+
+		[pscredential] $Credentials = $null
+    )
+    
+	Begin
+    {
+		if (!$Credentials)
+		{
+			$Credentials = Get-RestApiCredentials 
+		}
+    }
+	End
+    {       
+		Write-Verbose "Updating build definition '$DefinitionId' from Team Project '$TeamProjectName'..." 
+
+        $updateDefinitionUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$DefinitionId,$BuildApiVersion
+        $method = "PUT"
+        $headers = @{"Content-Type"="application/json"}
+        $body=$BuildDefinitionJsonBody
+        return Invoke-RestMethod -Credential $credentials -Uri $updateDefinitionUrl -Method $method -Headers $headers -Body ([System.Text.Encoding]::UTF8.GetBytes($body))
+    }
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
 Function Rename-BuildDefinition
 {
     [CmdletBinding()]
