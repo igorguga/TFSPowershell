@@ -12,7 +12,7 @@ schema: 2.0.0
 
 ```
 Set-BuildDefinitionPermissionsByIds [-CollectionUrl] <String> [-TeamProjectGuid] <String>
- [-BuildDefinitionId] <Int32> [-Members] <String[]> [-Actions] <String[]> [-Deny]
+ [-BuildDefinitionId] <Int32> [-Members] <String[]> [-Actions] <String[]> [-Deny] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,6 +117,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

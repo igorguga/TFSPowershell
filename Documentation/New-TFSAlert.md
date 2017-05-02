@@ -13,7 +13,7 @@ Creates a new TFS Alert.
 
 ```
 New-TFSAlert [[-CollectionUrl] <String>] [-AlertName] <String> [-SubscriberAccountName] <String>
- [-FilterExpression] <String> [-EventType] <String> [[-Tfs] <TfsTeamProjectCollection>]
+ [-FilterExpression] <String> [-EventType] <String> [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -130,6 +130,9 @@ Default value: $null
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

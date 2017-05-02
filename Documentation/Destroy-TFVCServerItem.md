@@ -7,15 +7,17 @@ schema: 2.0.0
 # Destroy-TFVCServerItem
 
 ## SYNOPSIS
+Pemanently removes a TFVC server item.
 
 ## SYNTAX
 
 ```
 Destroy-TFVCServerItem [[-CollectionUrl] <String>] [-ServerItemPath] <String> [[-VersionSpec] <VersionSpec>]
- [[-Tfs] <TfsTeamProjectCollection>]
+ [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+Pemanently removes a TFVC server item. Caution! All the history of the item will be lost!
 
 ## EXAMPLES
 
@@ -29,7 +31,9 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CollectionUrl
-@{Text=}
+The TeamProjectCollection URL.
+Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 
 ```yaml
 Type: String
@@ -44,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerItemPath
-@{Text=}
+The server path for the item to be permanently removed.
 
 ```yaml
 Type: String
@@ -59,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -VersionSpec
-@{Text=}
+The item version specification. The default value is "Latest".
 
 ```yaml
 Type: VersionSpec
@@ -74,7 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tfs
-@{Text=}
+An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection.
+If informed the CollectionUrl will be ignored.
 
 ```yaml
 Type: TfsTeamProjectCollection
@@ -87,6 +92,9 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

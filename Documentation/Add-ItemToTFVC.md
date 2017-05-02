@@ -7,15 +7,17 @@ schema: 2.0.0
 # Add-ItemToTFVC
 
 ## SYNOPSIS
+Uploads an Item to a TFVC repository.
 
 ## SYNTAX
 
 ```
 Add-ItemToTFVC [[-CollectionUrl] <String>] [-ServerPathToAddItem] <String> [-LocalItemPath] <String>
- [-CheckinDescription] <String> [[-Tfs] <TfsTeamProjectCollection>]
+ [-CheckinDescription] <String> [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+Uploads an Item to a TFVC repository.
 
 ## EXAMPLES
 
@@ -29,7 +31,9 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CollectionUrl
-@{Text=}
+The TeamProjectCollection URL.
+Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 
 ```yaml
 Type: String
@@ -44,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerPathToAddItem
-@{Text=}
+The server path where the item will be uploaded.
 
 ```yaml
 Type: String
@@ -59,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -LocalItemPath
-@{Text=}
+The local path of the item.
 
 ```yaml
 Type: String
@@ -74,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -CheckinDescription
-@{Text=}
+The message to be seted with the upload check-in.
 
 ```yaml
 Type: String
@@ -89,7 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tfs
-@{Text=}
+An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection.
+If informed the CollectionUrl will be ignored.
 
 ```yaml
 Type: TfsTeamProjectCollection
@@ -102,6 +107,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

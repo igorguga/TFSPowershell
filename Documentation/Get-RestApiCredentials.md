@@ -1,5 +1,5 @@
 ---
-external help file: TFSPowershell.Utils.Help.xml
+external help file: TFSPowershell.Tfs-help.xml
 online version: 
 schema: 2.0.0
 ---
@@ -7,16 +7,16 @@ schema: 2.0.0
 # Get-RestApiCredentials
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Retreives the credentials to be used with Rest APIs.
 
 ## SYNTAX
 
 ```
-Get-RestApiCredentials
+Get-RestApiCredentials [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Retreives the credentials to be used with Rest APIs. It first looks for credentials stored in the module with the Set-RestApiCredentials function. If it doesn't find any, it prompts the user to input the credentials.
 
 ## EXAMPLES
 
@@ -29,10 +29,12 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
-
 
 ## OUTPUTS
 

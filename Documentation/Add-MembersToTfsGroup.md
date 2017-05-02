@@ -7,14 +7,16 @@ schema: 2.0.0
 # Add-MembersToTfsGroup
 
 ## SYNOPSIS
+Adds a user to a TFS Group.
 
 ## SYNTAX
 
 ```
-Add-MembersToTfsGroup [-CollectionUrl] <String> [-Group] <String> [-Members] <String[]>
+Add-MembersToTfsGroup [-CollectionUrl] <String> [-Group] <String> [-Members] <String[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+Adds a user to a TFS Group.
 
 ## EXAMPLES
 
@@ -28,7 +30,9 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CollectionUrl
-@{Text=}
+The TeamProjectCollection URL.
+Ex.: https://tfs2015.local/tfs/defaultcollection. 
+
 
 ```yaml
 Type: String
@@ -43,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -Group
-@{Text=}
+The name of the TFS security Group.
 
 ```yaml
 Type: String
@@ -58,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Members
-@{Text=}
+A comma separeted list of users.
 
 ```yaml
 Type: String[]
@@ -71,6 +75,9 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

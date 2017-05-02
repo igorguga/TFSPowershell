@@ -12,7 +12,7 @@ schema: 2.0.0
 
 ```
 New-TeamProjectGroup [-CollectionUrl] <String> [[-TeamProjectName] <String>] [-Group] <String>
- [[-Description] <String>] [[-Tfs] <TfsTeamProjectCollection>] [[-TeamProject] <Object>]
+ [[-Description] <String>] [[-Tfs] <TfsTeamProjectCollection>] [[-TeamProject] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -117,6 +117,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

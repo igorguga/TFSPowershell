@@ -13,7 +13,7 @@ schema: 2.0.0
 ```
 Set-IterationPermissions [-CollectionUrl] <String> [-TeamProjectName] <String> [-IterationPath] <String>
  [-Members] <String[]> [-Actions] <String[]> [-Deny] [[-IterationUri] <String>]
- [[-Tfs] <TfsTeamProjectCollection>]
+ [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,6 +148,9 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

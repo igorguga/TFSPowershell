@@ -12,7 +12,7 @@ Gets the Global list of the collection.
 ## SYNTAX
 
 ```
-Get-GlobalLists [[-CollectionUrl] <String>] [[-Tfs] <TfsTeamProjectCollection>]
+Get-GlobalLists [[-CollectionUrl] <String>] [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,6 +61,9 @@ Default value: $null
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

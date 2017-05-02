@@ -1,22 +1,21 @@
 ---
-external help file: TFSPowershell.Tfs.Help.xml
+external help file: TFSPowershell.Utils.Help.xml
 online version: 
 schema: 2.0.0
 ---
 
-# Get-TeamProjectCollection
+# Set-TFSPowershellTempDir
 
 ## SYNOPSIS
-Gets the Team Project Collection.
 
 ## SYNTAX
 
 ```
-Get-TeamProjectCollection [-CollectionUrl] <String> [<CommonParameters>]
+Set-TFSPowershellTempDir [-TFSPowershellTempDirLocation] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves the object that represents a Team Project Collection.
+{{Fill in the Description}}
 
 ## EXAMPLES
 
@@ -29,9 +28,8 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -CollectionUrl
-The TeamProjectCollection URL.
-Ex.: https://tfs2015.local/tfs/defaultcollection.
+### -TFSPowershellTempDirLocation
+{{Fill TFSPowershellTempDirLocation Description}}
 
 ```yaml
 Type: String
@@ -39,7 +37,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

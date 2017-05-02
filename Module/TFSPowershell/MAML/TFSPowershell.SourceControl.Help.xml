@@ -5,16 +5,16 @@
 <command:details><command:name>Add-FolderToTFVC</command:name>
 <command:verb>Add</command:verb>
 <command:noun>FolderToTFVC</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Uploads a foder to a TFVC repository.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Uploads a folder to a TFVC repository.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Add-FolderToTFVC</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -23,7 +23,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>ServerPathToAddFolder</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path where the folder will be uploaded.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -32,7 +32,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>LocalFolderPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The local path to the folder you want to upload.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -41,7 +41,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>CheckinDescription</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The message to be seted with the upload check-in.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -50,7 +50,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -61,7 +61,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -70,7 +70,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>ServerPathToAddFolder</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path where the folder will be uploaded.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -79,7 +79,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>LocalFolderPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The local path to the folder you want to upload.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -88,7 +88,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>CheckinDescription</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The message to be seted with the upload check-in.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -97,7 +97,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="4" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -125,16 +125,16 @@
 <command:details><command:name>Add-ItemToTFVC</command:name>
 <command:verb>Add</command:verb>
 <command:noun>ItemToTFVC</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Uploads an Item to a TFVC repository.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Uploads an Item to a TFVC repository.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Add-ItemToTFVC</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -143,7 +143,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>ServerPathToAddItem</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path where the item will be uploaded.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -152,7 +152,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none"><maml:name>LocalItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The local path of the item.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -161,7 +161,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>CheckinDescription</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The message to be seted with the upload check-in.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -170,7 +170,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -181,7 +181,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -190,7 +190,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none"><maml:name>ServerPathToAddItem</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path where the item will be uploaded.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -199,7 +199,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none"><maml:name>LocalItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The local path of the item.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -208,7 +208,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>CheckinDescription</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The message to be seted with the upload check-in.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -217,7 +217,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -245,16 +245,16 @@
 <command:details><command:name>Convert-FolderToBranch</command:name>
 <command:verb>Convert</command:verb>
 <command:noun>FolderToBranch</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Converts a TFVC server folder to a branch.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Converts a TFVC server folder to a branch.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Convert-FolderToBranch</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -263,7 +263,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>FolderServerPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path of the folder.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -272,7 +272,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -283,7 +283,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -292,7 +292,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>FolderServerPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path of the folder.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -301,7 +301,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -329,16 +329,16 @@
 <command:details><command:name>Destroy-TFVCServerItem</command:name>
 <command:verb>Destroy</command:verb>
 <command:noun>TFVCServerItem</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Pemanently removes a TFVC server item.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Pemanently removes a TFVC server item. Caution! All the history of the item will be lost!
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Destroy-TFVCServerItem</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -347,7 +347,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>ServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the item to be permanently removed.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -356,7 +356,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>VersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The item version specification. The default value is "Latest".
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -365,7 +365,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -376,7 +376,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -385,7 +385,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>ServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the item to be permanently removed.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -394,7 +394,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>VersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The item version specification. The default value is "Latest".
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -403,7 +403,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="3" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -431,16 +431,16 @@
 <command:details><command:name>Merge-TFVCServerItems</command:name>
 <command:verb>Merge</command:verb>
 <command:noun>TFVCServerItems</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Merges to branches of a TFVC Repository.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Merges to branches of a TFVC Repository.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Merge-TFVCServerItems</maml:name>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -449,7 +449,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>FromServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the source branch of the merge.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -458,7 +458,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TargetServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the target branche of the merge.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -467,7 +467,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>FromVersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The version specification of the source branch of the merge. If null, the latest version will be considered.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -476,7 +476,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>TargetVersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The version specification of the target branch of the merge. If null, the latest version will be considered.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -485,7 +485,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>LockLevel</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The lock level to be used during the merge. 'None' is the default version.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">LockLevel</command:parameterValue>
@@ -494,7 +494,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none"><maml:name>RecursionType</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The recursion type of the merge. The default value is Full.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">RecursionType</command:parameterValue>
@@ -503,7 +503,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none"><maml:name>MergeOptions</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Optional merge options to be set. The default is 'None'.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">MergeOptions</command:parameterValue>
@@ -512,7 +512,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="8" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -523,7 +523,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -532,7 +532,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>FromServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the source branch of the merge.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -541,7 +541,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>TargetServerItemPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The server path for the target branche of the merge.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -550,7 +550,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>FromVersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The version specification of the source branch of the merge. If null, the latest version will be considered.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -559,7 +559,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>TargetVersionSpec</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The version specification of the target branch of the merge. If null, the latest version will be considered.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">VersionSpec</command:parameterValue>
@@ -568,7 +568,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>LockLevel</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The lock level to be used during the merge. 'None' is the default version.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">LockLevel</command:parameterValue>
@@ -577,7 +577,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none"><maml:name>RecursionType</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The recursion type of the merge. The default value is Full.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">RecursionType</command:parameterValue>
@@ -586,7 +586,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none"><maml:name>MergeOptions</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Optional merge options to be set. The default is 'None'.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">MergeOptions</command:parameterValue>
@@ -595,7 +595,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="8" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>

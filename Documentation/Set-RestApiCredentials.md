@@ -1,22 +1,22 @@
 ---
-external help file: TFSPowershell.Tfs.Help.xml
+external help file: TFSPowershell.Utils.Help.xml
 online version: 
 schema: 2.0.0
 ---
 
-# Get-TeamProjectCollection
+# Set-RestApiCredentials
 
 ## SYNOPSIS
-Gets the Team Project Collection.
+Saves a credentials object into a file securely.
 
 ## SYNTAX
 
 ```
-Get-TeamProjectCollection [-CollectionUrl] <String> [<CommonParameters>]
+Set-RestApiCredentials [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves the object that represents a Team Project Collection.
+Saves a credentials object into a file securely, to be automatically used with all functions uses REST API.
 
 ## EXAMPLES
 
@@ -28,22 +28,6 @@ PS C:\> {{ Add example code here }}
 {{ Add example description here }}
 
 ## PARAMETERS
-
-### -CollectionUrl
-The TeamProjectCollection URL.
-Ex.: https://tfs2015.local/tfs/defaultcollection.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: 
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).

@@ -7,15 +7,18 @@ schema: 2.0.0
 # Set-AreaPermissions
 
 ## SYNOPSIS
+Grants permissions in Areas.
 
 ## SYNTAX
 
 ```
 Set-AreaPermissions [-CollectionUrl] <String> [-TeamProjectName] <String> [-AreaPath] <String>
  [-Members] <String[]> [-Actions] <String[]> [-Deny] [[-AreaURI] <String>] [[-Tfs] <TfsTeamProjectCollection>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+Grants permissions for users and/groups in Areas.
 
 ## EXAMPLES
 
@@ -29,7 +32,9 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CollectionUrl
-@{Text=}
+The TeamProjectCollection URL.
+Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 
 ```yaml
 Type: String
@@ -44,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -TeamProjectName
-@{Text=}
+The name of the Team Project the Area belongs.
 
 ```yaml
 Type: String
@@ -59,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -AreaPath
-@{Text=}
+Area path without the Team Project (Ex.: \Area 1\Sub-area 3).
 
 ```yaml
 Type: String
@@ -74,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Members
-@{Text=}
+Users and/or groups to grant permissions.
 
 ```yaml
 Type: String[]
@@ -89,7 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-@{Text=}
+Actions to be granted:
+WORK_ITEM_READ, WORK_ITEM_WRITE, GENERIC_READ, GENERIC_WRITE, CREATE_CHILDREN, DELETE, MANAGE_TEST_PLANS
 
 ```yaml
 Type: String[]
@@ -104,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -Deny
-@{Text=}
+If informed, will deny the the action for the user and/or group informed.
 
 ```yaml
 Type: SwitchParameter
@@ -119,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -AreaURI
-@{Text=}
+The area URI. Got from New-Area. Ex.: vstfs:///Classification/Node/71e08ab3-62f7-4a9a-8430-fdcfca626401. 
 
 ```yaml
 Type: String
@@ -134,7 +140,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tfs
-@{Text=}
+An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection.
+If informed the CollectionUrl will be ignored.
 
 ```yaml
 Type: TfsTeamProjectCollection
@@ -147,6 +154,9 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

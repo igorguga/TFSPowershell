@@ -5,16 +5,16 @@
 <command:details><command:name>Add-MembersToTfsGroup</command:name>
 <command:verb>Add</command:verb>
 <command:noun>MembersToTfsGroup</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Adds a user to a TFS Group.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Adds a user to a TFS Group.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Add-MembersToTfsGroup</maml:name>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -23,7 +23,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Group</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The name of the TFS security Group.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -32,7 +32,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Members</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>A comma separeted list of users.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -43,7 +43,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -52,7 +52,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Group</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The name of the TFS security Group.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -61,7 +61,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Members</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>A comma separeted list of users.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -395,16 +395,16 @@
 <command:details><command:name>Set-AreaPermissions</command:name>
 <command:verb>Set</command:verb>
 <command:noun>AreaPermissions</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Grants permissions in Areas.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>
+<maml:description><maml:para>Grants permissions for users and/groups in Areas.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Set-AreaPermissions</maml:name>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -413,7 +413,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The name of the Team Project the Area belongs.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -422,7 +422,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Area path without the Team Project (Ex.: \Area 1\Sub-area 3).
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -431,7 +431,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Members</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Users and/or groups to grant permissions.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -440,7 +440,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>Actions</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Actions to be granted: WORK_ITEM_READ, WORK_ITEM_WRITE, GENERIC_READ, GENERIC_WRITE, CREATE_CHILDREN, DELETE, MANAGE_TEST_PLANS
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -449,7 +449,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>AreaURI</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The area URI. Got from New-Area. Ex.: vstfs:///Classification/Node/71e08ab3-62f7-4a9a-8430-fdcfca626401.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -458,7 +458,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="6" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>
@@ -467,7 +467,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Deny</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>If informed, will deny the the action for the user and/or group informed.
 </maml:para>
 </maml:Description>
 <dev:type><maml:name>SwitchParameter</maml:name>
@@ -477,7 +477,7 @@
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The TeamProjectCollection URL. Ex.: https://tfs2015.local/tfs/defaultcollection.  Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -486,7 +486,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>TeamProjectName</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The name of the Team Project the Area belongs.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -495,7 +495,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>AreaPath</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Area path without the Team Project (Ex.: \Area 1\Sub-area 3).
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -504,7 +504,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Members</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Users and/or groups to grant permissions.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -513,7 +513,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none"><maml:name>Actions</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>Actions to be granted: WORK_ITEM_READ, WORK_ITEM_WRITE, GENERIC_READ, GENERIC_WRITE, CREATE_CHILDREN, DELETE, MANAGE_TEST_PLANS
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
@@ -522,7 +522,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Deny</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>If informed, will deny the the action for the user and/or group informed.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
@@ -531,7 +531,7 @@
 <dev:defaultValue>False</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>AreaURI</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>The area URI. Got from New-Area. Ex.: vstfs:///Classification/Node/71e08ab3-62f7-4a9a-8430-fdcfca626401.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
@@ -540,7 +540,7 @@
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="6" aliases="none"><maml:name>Tfs</maml:name>
-<maml:Description><maml:para>@{Text=}
+<maml:Description><maml:para>An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection. If informed the CollectionUrl will be ignored.
 </maml:para>
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">TfsTeamProjectCollection</command:parameterValue>

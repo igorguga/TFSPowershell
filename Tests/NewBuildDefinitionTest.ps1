@@ -1,0 +1,2 @@
+Import-Module .\Module\TFSPowershell -force
+New-BuildDefinition -CollectionUrl https://irmacedo.visualstudio.com -TeamProjectName TFSMigration -TemplateName "Visual Studio" -BuildDefinitionName "TesteIgor"

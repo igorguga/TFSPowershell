@@ -7,6 +7,7 @@ schema: 2.0.0
 # Merge-TFVCServerItems
 
 ## SYNOPSIS
+Merges to branches of a TFVC Repository.
 
 ## SYNTAX
 
@@ -14,10 +15,11 @@ schema: 2.0.0
 Merge-TFVCServerItems [[-CollectionUrl] <String>] [-FromServerItemPath] <String>
  [-TargetServerItemPath] <String> [[-FromVersionSpec] <VersionSpec>] [[-TargetVersionSpec] <VersionSpec>]
  [[-LockLevel] <LockLevel>] [[-RecursionType] <RecursionType>] [[-MergeOptions] <MergeOptions>]
- [[-Tfs] <TfsTeamProjectCollection>]
+ [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+Merges to branches of a TFVC Repository.
 
 ## EXAMPLES
 
@@ -31,7 +33,10 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -CollectionUrl
-@{Text=}
+The TeamProjectCollection URL.
+Ex.: https://tfs2015.local/tfs/defaultcollection. 
+Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
+
 
 ```yaml
 Type: String
@@ -46,7 +51,7 @@ Accept wildcard characters: False
 ```
 
 ### -FromServerItemPath
-@{Text=}
+The server path for the source branch of the merge.
 
 ```yaml
 Type: String
@@ -61,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetServerItemPath
-@{Text=}
+The server path for the target branche of the merge.
 
 ```yaml
 Type: String
@@ -76,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -FromVersionSpec
-@{Text=}
+The version specification of the source branch of the merge. If null, the latest version will be considered.
 
 ```yaml
 Type: VersionSpec
@@ -91,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVersionSpec
-@{Text=}
+The version specification of the target branch of the merge. If null, the latest version will be considered.
 
 ```yaml
 Type: VersionSpec
@@ -106,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -LockLevel
-@{Text=}
+The lock level to be used during the merge. 'None' is the default version.
 
 ```yaml
 Type: LockLevel
@@ -121,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecursionType
-@{Text=}
+The recursion type of the merge. The default value is Full.
 
 ```yaml
 Type: RecursionType
@@ -136,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -MergeOptions
-@{Text=}
+Optional merge options to be set. The default is 'None'.
 
 ```yaml
 Type: MergeOptions
@@ -151,7 +156,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tfs
-@{Text=}
+An instance of the object TfsTeamProjectCollection, that represents a TeamProjectCollection.
+If informed the CollectionUrl will be ignored.
 
 ```yaml
 Type: TfsTeamProjectCollection
@@ -164,6 +170,9 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
