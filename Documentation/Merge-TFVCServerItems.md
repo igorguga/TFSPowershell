@@ -15,7 +15,7 @@ Merges to branches of a TFVC Repository.
 Merge-TFVCServerItems [[-CollectionUrl] <String>] [-FromServerItemPath] <String>
  [-TargetServerItemPath] <String> [[-FromVersionSpec] <VersionSpec>] [[-TargetVersionSpec] <VersionSpec>]
  [[-LockLevel] <LockLevel>] [[-RecursionType] <RecursionType>] [[-MergeOptions] <MergeOptions>]
- [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
+ [[-Tfs] <TfsTeamProjectCollection>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,6 @@ PS C:\> {{ Add example code here }}
 The TeamProjectCollection URL.
 Ex.: https://tfs2015.local/tfs/defaultcollection. 
 Note: if the 'Tfs' parameter was informed, this parameter will be ignored.
-
 
 ```yaml
 Type: String
@@ -81,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -FromVersionSpec
-The version specification of the source branch of the merge. If null, the latest version will be considered.
+The version specification of the source branch of the merge.
+If null, the latest version will be considered.
 
 ```yaml
 Type: VersionSpec
@@ -96,7 +96,8 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVersionSpec
-The version specification of the target branch of the merge. If null, the latest version will be considered.
+The version specification of the target branch of the merge.
+If null, the latest version will be considered.
 
 ```yaml
 Type: VersionSpec
@@ -111,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -LockLevel
-The lock level to be used during the merge. 'None' is the default version.
+The lock level to be used during the merge.
+'None' is the default version.
 
 ```yaml
 Type: LockLevel
@@ -126,7 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -RecursionType
-The recursion type of the merge. The default value is Full.
+The recursion type of the merge.
+The default value is Full.
 
 ```yaml
 Type: RecursionType
@@ -141,7 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -MergeOptions
-Optional merge options to be set. The default is 'None'.
+Optional merge options to be set.
+The default is 'None'.
 
 ```yaml
 Type: MergeOptions
@@ -170,9 +174,6 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

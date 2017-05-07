@@ -12,7 +12,7 @@ schema: 2.0.0
 
 ```
 Set-SourceControlPermissions [-CollectionUrl] <String> [-ServerPaths] <String[]> [-Members] <String>
- [-IsMembersGroups] [-Permissions] <String[]> [-Deny] [<CommonParameters>]
+ [-IsMembersGroups] [-Permissions] <String[]> [-Deny]
 ```
 
 ## DESCRIPTION
@@ -83,7 +83,7 @@ Aliases:
 
 Required: True
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -113,13 +113,10 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

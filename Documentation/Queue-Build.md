@@ -13,7 +13,7 @@ Queues a new build.
 
 ```
 Queue-Build [-CollectionUrl] <String> [-TeamProjectName] <String> [-BuildDefinitionName] <String>
- [[-Reason] <String>] [[-SourceBranch] <String>] [-WaitUntilBuildComplete] [<CommonParameters>]
+ [[-Reason] <String>] [[-SourceBranch] <String>] [-WaitUntilBuildComplete]
 ```
 
 ## DESCRIPTION
@@ -117,13 +117,10 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -13,7 +13,7 @@ Creates a new TFS Alert.
 
 ```
 New-TFSAlert [[-CollectionUrl] <String>] [-AlertName] <String> [-SubscriberAccountName] <String>
- [-FilterExpression] <String> [-EventType] <String> [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
+ [-FilterExpression] <String> [-EventType] <String> [[-Tfs] <TfsTeamProjectCollection>]
 ```
 
 ## DESCRIPTION
@@ -79,13 +79,7 @@ Accept wildcard characters: False
 
 ### -FilterExpression
 The filter expression used by the alert. 
-Ex:
-  "CoreFields/StringFields/Field\[Name='Area Path'\]/NewValue" = '\AreaPath' AND 
-  "CoreFields/StringFields/Field\[Name='Authorized As'\]/NewValue" \<\> '@@MyDisplayName@@' AND 
-  ("CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Requirement' OR 
-   "CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Issue' OR 
-   "CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Bug') AND 
-   " ""CoreFields/StringFields/Field\[Name='State'\]/NewValue"" \<\> ""CoreFields/StringFields/Field\[Name='State'\]/OldValue"" "
+Ex:   "CoreFields/StringFields/Field\[Name='Area Path'\]/NewValue" = '\AreaPath' AND    "CoreFields/StringFields/Field\[Name='Authorized As'\]/NewValue" \<\> '@@MyDisplayName@@' AND    ("CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Requirement' OR     "CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Issue' OR     "CoreFields/StringFields/Field\[Name='Work Item Type'\]/NewValue" = 'Bug') AND     " ""CoreFields/StringFields/Field\[Name='State'\]/NewValue"" \<\> ""CoreFields/StringFields/Field\[Name='State'\]/OldValue"" "
 
 ```yaml
 Type: String
@@ -130,9 +124,6 @@ Default value: $null
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

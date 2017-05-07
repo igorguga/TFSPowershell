@@ -13,11 +13,11 @@ Uploads a foder to a TFVC repository.
 
 ```
 Add-FolderToTFVC [[-CollectionUrl] <String>] [-ServerPathToAddFolder] <String> [-LocalFolderPath] <String>
- [-CheckinDescription] <String> [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
+ [-CheckinDescription] <String> [[-Tfs] <TfsTeamProjectCollection>]
 ```
 
 ## DESCRIPTION
-Uploads a folder to a TFVC repository. 
+Uploads a folder to a TFVC repository.
 
 ## EXAMPLES
 
@@ -107,9 +107,6 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

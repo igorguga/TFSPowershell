@@ -13,7 +13,7 @@ Gets a build by Id.
 
 ```
 Get-BuildById [-CollectionUrl] <String> [-TeamProjectName] <String> [-BuildId] <String>
- [[-Credentials] <PSCredential>] [<CommonParameters>]
+ [[-Credentials] <PSCredential>]
 ```
 
 ## DESCRIPTION
@@ -90,9 +90,6 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

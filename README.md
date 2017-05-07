@@ -13,8 +13,21 @@ This version supports TFS 2015.3, but I'm planning to support TFS 2017 and VSTS 
 
 ## How to Install
 
+Install TFSPowershell module from the PowerShell Gallery:
+
+```powershell
+Install-Module -Name TFSPowershell -Scope CurrentUser
+Import-Module TFSPowershell
+```
+
 ## How to Use
+
+Just call the functions and inform the parameters. Most functions have a CollectionURL parameter. Some of them support pipeline. Consult the documentation for more details.
+
 
 ## Contributions
 
 ## Documentation
+
+[https://github.com/igorguga/TFSPowershell/blob/master/Documentation/TFSPowershell.md]()
+

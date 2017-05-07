@@ -13,7 +13,7 @@ Set the Team Settings for a Team.
 
 ```
 Set-TeamSettings [[-CollectionUrl] <String>] [-TeamId] <Guid> [-TeamSettings] <TeamSettings>
- [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
+ [[-Tfs] <TfsTeamProjectCollection>]
 ```
 
 ## DESCRIPTION
@@ -93,9 +93,6 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -12,7 +12,7 @@ Adds a user to a TFS Group.
 ## SYNTAX
 
 ```
-Add-MembersToTfsGroup [-CollectionUrl] <String> [-Group] <String> [-Members] <String[]> [<CommonParameters>]
+Add-MembersToTfsGroup [-CollectionUrl] <String> [-Group] <String> [-Members] <String[]>
 ```
 
 ## DESCRIPTION
@@ -31,8 +31,7 @@ PS C:\> {{ Add example code here }}
 
 ### -CollectionUrl
 The TeamProjectCollection URL.
-Ex.: https://tfs2015.local/tfs/defaultcollection. 
-
+Ex.: https://tfs2015.local/tfs/defaultcollection.
 
 ```yaml
 Type: String
@@ -75,9 +74,6 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

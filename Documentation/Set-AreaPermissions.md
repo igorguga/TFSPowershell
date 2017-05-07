@@ -14,7 +14,6 @@ Grants permissions in Areas.
 ```
 Set-AreaPermissions [-CollectionUrl] <String> [-TeamProjectName] <String> [-AreaPath] <String>
  [-Members] <String[]> [-Actions] <String[]> [-Deny] [[-AreaURI] <String>] [[-Tfs] <TfsTeamProjectCollection>]
- [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,8 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-Actions to be granted:
-WORK_ITEM_READ, WORK_ITEM_WRITE, GENERIC_READ, GENERIC_WRITE, CREATE_CHILDREN, DELETE, MANAGE_TEST_PLANS
+Actions to be granted: WORK_ITEM_READ, WORK_ITEM_WRITE, GENERIC_READ, GENERIC_WRITE, CREATE_CHILDREN, DELETE, MANAGE_TEST_PLANS
 
 ```yaml
 Type: String[]
@@ -119,13 +117,15 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AreaURI
-The area URI. Got from New-Area. Ex.: vstfs:///Classification/Node/71e08ab3-62f7-4a9a-8430-fdcfca626401. 
+The area URI.
+Got from New-Area.
+Ex.: vstfs:///Classification/Node/71e08ab3-62f7-4a9a-8430-fdcfca626401.
 
 ```yaml
 Type: String
@@ -154,9 +154,6 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

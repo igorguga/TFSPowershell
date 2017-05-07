@@ -1,6 +1,5 @@
 ﻿$rootPath = $PSScriptRoot
 
-#Try to find saved crendentials, if not, request the credential for the user
 # .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
 Function Get-RestApiCredentials
 {

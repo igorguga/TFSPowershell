@@ -13,11 +13,13 @@ Pemanently removes a TFVC server item.
 
 ```
 Destroy-TFVCServerItem [[-CollectionUrl] <String>] [-ServerItemPath] <String> [[-VersionSpec] <VersionSpec>]
- [[-Tfs] <TfsTeamProjectCollection>] [<CommonParameters>]
+ [[-Tfs] <TfsTeamProjectCollection>]
 ```
 
 ## DESCRIPTION
-Pemanently removes a TFVC server item. Caution! All the history of the item will be lost!
+Pemanently removes a TFVC server item.
+Caution!
+All the history of the item will be lost!
 
 ## EXAMPLES
 
@@ -63,7 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -VersionSpec
-The item version specification. The default value is "Latest".
+The item version specification.
+The default value is "Latest".
 
 ```yaml
 Type: VersionSpec
@@ -92,9 +95,6 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
-
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
