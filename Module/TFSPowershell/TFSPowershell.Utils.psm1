@@ -26,6 +26,7 @@ Function Get-RestApiCredentials
 # .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
 Function Set-RestApiCredentials
 {
+	[CmdletBinding()]
 	Param()
 	$credentials = Get-Credential
 	$username = $credentials.UserName
@@ -52,6 +53,7 @@ Function Clear-RestAPICredentials
 # .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
 Function Set-TFSPowershellTempDir
 {
+	[CmdletBinding()]
 	Param(
 		[Parameter(mandatory=$true)]
 		[string] $TFSPowershellTempDirLocation
@@ -63,13 +65,14 @@ Function Set-TFSPowershellTempDir
 # .ExternalHelp .\MAML\TFSPowershell.Utils.Help.xml
 Function Invoke-RestAPICall
 {
+	[CmdletBinding()]
 	Param(
 		[Parameter(mandatory=$true)]
 		[string] $Uri,
 		[Parameter(mandatory=$true)]
 		[string] $Method,
-		[string] $Headers,
-		[string] $Body
+		$Headers,
+		$Body
 	)
 
 	$command = "Invoke-RestMethod -Uri ""$Uri"" -Method ""$Method"" -ContentType application/json "
@@ -83,10 +86,10 @@ Function Invoke-RestAPICall
 	}
 	else 
 	{
-		if ($Uri.EndsWith(".visualstudio.com"))
+		if ([regex]::match($Uri, "https:\/\/.*.visualstudio\.com\/.*", [System.Text.RegularExpressions.RegexOptions]::IgnoreCase).Success)
 		{
 			$base64authinfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $credentials.UserName, $credentials.GetNetworkCredential().Password)))
-			$Headers += @{Authorization=("Basic {0}" -f $base64authinfo)}
+			$Headers = @{Authorization=("Basic {0}" -f $base64authinfo)}
 
 			$command += '-Headers $Headers '
 		}
@@ -95,10 +98,11 @@ Function Invoke-RestAPICall
 			$command += '-Credential $credentials '
 		}
 	}
-	if ($Method -ne "GET" -and $Method -eq "DELETE")
+	if ($Method -ne "GET" -and $Method -ne "DELETE")
 	{
-		$command += '-Body $body '
+		$command += '-Body $Body '
 	}
 
+	Write-Verbose $command 
 	return Invoke-Expression $command
 }

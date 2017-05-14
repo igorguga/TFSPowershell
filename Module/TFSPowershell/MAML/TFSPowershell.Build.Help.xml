@@ -40,15 +40,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -75,15 +66,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -142,15 +124,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -177,15 +150,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -244,15 +208,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -279,15 +234,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -346,15 +292,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -381,15 +318,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when retrieving the build definiton information.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -457,15 +385,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>{{Fill Credentials Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -501,15 +420,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>{{Fill Credentials Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -869,15 +779,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when queueing the build.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>WaitUntilBuildComplete</maml:name>
 <maml:Description><maml:para>Informs for the function to not ends until the build complete.
 </maml:para>
@@ -941,15 +842,6 @@
 <dev:type><maml:name>SwitchParameter</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>False</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when queueing the build.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
 </command:parameters>
 <command:inputTypes></command:inputTypes>
@@ -1090,15 +982,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when removeing the build definition.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -1125,15 +1008,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
 <dev:type><maml:name>Int32</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>The credentials to be used when removeing the build definition.
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
@@ -1303,15 +1177,6 @@
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>{{Fill Credentials Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
 </command:syntaxItem>
 </command:syntax>
 <command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>CollectionUrl</maml:name>
@@ -1347,15 +1212,6 @@
 </maml:Description>
 <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
 <dev:type><maml:name>String</maml:name>
-<maml:uri /></dev:type>
-<dev:defaultValue>None</dev:defaultValue>
-</command:parameter>
-<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none"><maml:name>Credentials</maml:name>
-<maml:Description><maml:para>{{Fill Credentials Description}}
-</maml:para>
-</maml:Description>
-<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-<dev:type><maml:name>PSCredential</maml:name>
 <maml:uri /></dev:type>
 <dev:defaultValue>None</dev:defaultValue>
 </command:parameter>

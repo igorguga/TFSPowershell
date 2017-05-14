@@ -4,19 +4,19 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-RestApiCredentials
+# Clear-RestAPICredentials
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+Removes all stored credentials.
 
 ## SYNTAX
 
 ```
-Get-RestApiCredentials
+Clear-RestAPICredentials
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Removes all stored credentials for REST APIs calls.
 
 ## EXAMPLES
 
@@ -31,11 +31,7 @@ PS C:\> {{ Add example code here }}
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 

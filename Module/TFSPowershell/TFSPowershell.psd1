@@ -12,7 +12,7 @@
 RootModule = 'TFSPowershell.Tfs'
 
 # Version number of this module.
-ModuleVersion = '0.1.0'
+ModuleVersion = '0.2.0'
 
 # ID used to uniquely identify this module
 GUID = '245d95e7-7b7f-4237-b2ba-db410a10b894'
@@ -105,7 +105,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        # ReleaseNotes = 'Support for PAT credentials.'
 
         # External dependent modules of this module
         # ExternalModuleDependencies = ''

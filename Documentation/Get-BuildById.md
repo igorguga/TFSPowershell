@@ -13,7 +13,6 @@ Gets a build by Id.
 
 ```
 Get-BuildById [-CollectionUrl] <String> [-TeamProjectName] <String> [-BuildId] <String>
- [[-Credentials] <PSCredential>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +70,6 @@ Aliases:
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credentials
-The credentials to be used when retrieving the build information.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -13,7 +13,7 @@ Queues a new build by the build definition Id.
 
 ```
 Queue-BuildByDefinitionId [-CollectionUrl] <String> [-TeamProjectName] <String> [-DefinitionId] <Int32>
- [[-Reason] <String>] [[-SourceBranch] <String>] [-WaitUntilBuildComplete] [[-Credentials] <PSCredential>]
+ [[-Reason] <String>] [[-SourceBranch] <String>] [-WaitUntilBuildComplete]
 ```
 
 ## DESCRIPTION
@@ -118,21 +118,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credentials
-The credentials to be used when queueing the build.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 5
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

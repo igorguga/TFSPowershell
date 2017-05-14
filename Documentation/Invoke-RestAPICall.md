@@ -1,22 +1,21 @@
 ---
-external help file: TFSPowershell.Build.Help.xml
+external help file: TFSPowershell.Utils.Help.xml
 online version: 
 schema: 2.0.0
 ---
 
-# Get-BuildDefinitionsFromTeamProject
+# Invoke-RestAPICall
 
 ## SYNOPSIS
-
+Calls a TFS/VSTS REST API.
 ## SYNTAX
 
 ```
-Get-BuildDefinitionsFromTeamProject [-CollectionUrl] <String> [-TeamProjectName] <String>
- [[-nameFilter] <String>] [[-typeFilter] <String>]
+Invoke-RestAPICall [-Uri] <String> [-Method] <String> [[-Headers] <Object>] [[-Body] <Object>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+Abstract the credentials from the caller, using the credentials from the current user or the credential stored using the Set-RestApiCredentials function.
 
 ## EXAMPLES
 
@@ -29,8 +28,8 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -CollectionUrl
-{{Fill CollectionUrl Description}}
+### -Uri
+{{Fill Uri Description}}
 
 ```yaml
 Type: String
@@ -44,8 +43,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TeamProjectName
-{{Fill TeamProjectName Description}}
+### -Method
+{{Fill Method Description}}
 
 ```yaml
 Type: String
@@ -59,13 +58,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -nameFilter
-Filters to definitions whose names equal this value.
-Append a * to filter to definitions whose names start with this value.
-For example: MS*.
+### -Headers
+{{Fill Headers Description}}
 
 ```yaml
-Type: String
+Type: Object
 Parameter Sets: (All)
 Aliases: 
 
@@ -76,12 +73,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -typeFilter
-The type of the build definitions to retrieve.
-If not specified, all types will be returned.
+### -Body
+{{Fill Body Description}}
 
 ```yaml
-Type: String
+Type: Object
 Parameter Sets: (All)
 Aliases: 
 

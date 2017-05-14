@@ -13,7 +13,6 @@ Removes a build definition by its Id.
 
 ```
 Remove-BuildDefinitionById [-CollectionUrl] <String> [-TeamProjectName] <String> [-DefinitionId] <Int32>
- [[-Credentials] <PSCredential>]
 ```
 
 ## DESCRIPTION
@@ -71,21 +70,6 @@ Aliases:
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credentials
-The credentials to be used when removeing the build definition.
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

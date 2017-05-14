@@ -1,45 +1,39 @@
 ﻿#Rest API version to be used
-$BuildApiVersion ="2.0"
+$BuildApiVersion = "2.0"
 $WaitBuildSeconds = 10 
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function New-BuildDefinition
-{
+Function New-BuildDefinition {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TemplateName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $BuildDefinitionName,
 
         [string] $TemplateTeamProjectName,
-		[hashtable] $OverwriteParameters
+        [hashtable] $OverwriteParameters
     )
     
-    $credentials = Get-RestApiCredentials -Verbose
-	
-    if ($TemplateTeamProjectName -eq $null -or $TemplateTeamProjectName -eq "")
-    {
+    if ($TemplateTeamProjectName -eq $null -or $TemplateTeamProjectName -eq "") {
         $TemplateTeamProjectName = $TeamProjectName
     }
      
-	Write-Verbose "Retrieving build template $TemplateName from team project $TemplateTeamProjectName..." 
-    $getTemplateUrl = "{0}/{1}/_apis/build/definitions/templates/{2}?api-version={3}" -f $CollectionUrl,$TemplateTeamProjectName,$TemplateName,$BuildApiVersion
+    Write-Verbose "Retrieving build template $TemplateName from team project $TemplateTeamProjectName..." 
+    $getTemplateUrl = "{0}/{1}/_apis/build/definitions/templates/{2}?api-version={3}" -f $CollectionUrl, $TemplateTeamProjectName, $TemplateName, $BuildApiVersion
  
-    try
-    {
-        $response = Invoke-RestMethod -Credential $credentials -Uri $getTemplateUrl -Method "GET" 
-    }
-    catch
-    {
-        Write-Error "Build Template ""$TemplateName"" not found on Team Project ""$TemplateTeamProjectName"". Url: $getTemplateUrl. User: $($credentials.UserName). Aborting build definition creation. Details: $_.Exception.Message"
+    try {
+        $response = Invoke-RestAPICall -Uri $getTemplateUrl -Method "GET" -Verbose:$VerbosePreference
+        }
+    catch {
+        Write-Error "Build Template ""$TemplateName"" not found on Team Project ""$TemplateTeamProjectName"". Url: $getTemplateUrl. Aborting build definition creation. Details: $_.Exception.Message"
         return
     }
 
@@ -47,522 +41,375 @@ Function New-BuildDefinition
     $template.Name = $BuildDefinitionName
     $template.PSObject.Properties.Remove("project")
 
-	Write-Verbose "Editing build parameters informed..." 
-	foreach ($key in $OverwriteParameters.Keys)
-	{		
-        $propertieCmd = '$template.'+"$key"
-        try 
-        {
+    Write-Verbose "Editing build parameters informed..." 
+    foreach ($key in $OverwriteParameters.Keys) {		
+        $propertieCmd = '$template.' + "$key"
+        try {
             #Trying to find the variable on the build template
             $propertieValue = Invoke-Expression $propertieCmd
-            if ($propertieValue -ne $null)
-            {
-                $assignCmd = '$template.'+"$key="+'$OverwriteParameters.'+"""$key"""
-               Invoke-Expression $assignCmd
-           }	
-       }
-       catch  #if not found do nothing 
-       { 
-           Write-Debug "Parameter '$propertieCmd' or '$assignCmd' not found in the build definition template. It will be ignored."
-       }
-	}
+            if ($propertieValue -ne $null) {
+                $assignCmd = '$template.' + "$key=" + '$OverwriteParameters.' + """$key"""
+                Invoke-Expression $assignCmd
+            }	
+        }
+        #if not found do nothing
+        catch { 
+            Write-Debug "Parameter '$propertieCmd' or '$assignCmd' not found in the build definition template. It will be ignored."
+        }
+    }
 
-	Write-Verbose "Creating the build definition $BuildDefinitionName..." 
-    $newDefinitionUrl = "{0}/{1}/_apis/build/definitions?api-version={2}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion
+    Write-Verbose "Creating the build definition $BuildDefinitionName..." 
+    $newDefinitionUrl = "{0}/{1}/_apis/build/definitions?api-version={2}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion
     $method = "POST"
-    $headers = @{"Content-Type"="application/json"}
-    $body=ConvertTo-Json $template -Depth 20
-    $newDefinition = Invoke-RestMethod -Credential $credentials -Uri $newDefinitionUrl -Method $method -Headers $headers -Body ([System.Text.Encoding]::UTF8.GetBytes($body))
+    $body = ConvertTo-Json $template -Depth 20 -Compress
+    $newDefinition = Invoke-RestAPICall -Uri $newDefinitionUrl -Method $method -Body ([System.Text.Encoding]::UTF8.GetBytes($body)) -Verbose:$VerbosePreference
 
     return $newDefinition
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Remove-BuildDefinition
-{
+Function Remove-BuildDefinition {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $BuildDefinitionName
     )
     
-	Begin
-    {
-        $credentials = Get-RestApiCredentials     
-    }
-	Process
-    {       
-		Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
-        $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$BuildDefinitionName
+    Process {       
+        Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
+        $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion, $BuildDefinitionName
         
-        try
-        {
-            $response = Invoke-RestMethod -Credential $credentials -Uri $getDefinitionsUrl -Method "GET" 
+        try {
+            $response = Invoke-RestAPICall -Uri $getDefinitionsUrl -Method "GET" -Verbose:$VerbosePreference
         }
-        catch
-        {
+        catch {
             Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
             return
         }
 
-        if ($response.count -eq 0 )
-        {
+        if ($response.count -eq 0 ) {
             Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
             return
         }
         
-		$Id = $response.value.id
-		Remove-BuildDefinitionById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $Id -Verbose -Credentials $credentials
+        $Id = $response.value.id
+        Remove-BuildDefinitionById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $Id -Verbose
     }
-    End
-    {
+    End {
         Write-Output "Done."
     }
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Remove-BuildDefinitionById
-{
+Function Remove-BuildDefinitionById {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
-        [int] $DefinitionId,
-
-		[pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [int] $DefinitionId
     )
     
-	Begin
-    {
-		if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
+    Process {       
+        Write-Verbose "Removing build definition of Id $DefinitionId..." 
+        $deleteUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $DefinitionId, $BuildApiVersion     
+        $response = Invoke-RestAPICall -Uri $deleteUrl -Method "DELETE" -Verbose:$VerbosePreference
     }
-	Process
-    {       
-		Write-Verbose "Removing build definition of Id $DefinitionId..." 
-        $deleteUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$DefinitionId,$BuildApiVersion     
-        $response = Invoke-RestMethod -Credential $Credentials -Uri $deleteUrl -Method "DELETE" 
-    }
-    End
-    {
+    End {
         Write-Output "Done."
     }
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Get-BuildDefinitionBasicInfo
-{
+Function Get-BuildDefinitionBasicInfo {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
-        [string] $BuildDefinitionName,
-
-		[pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [string] $BuildDefinitionName
     )
-    
-	Begin
-    {
-        if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}     
-    }
-	End
-    {       
-		Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
-        $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$BuildDefinitionName
+       
+    Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
+    $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion, $BuildDefinitionName
         
-        try
-        {
-            $response = Invoke-RestMethod -Credential $credentials -Uri $getDefinitionsUrl -Method "GET" 
-        }
-        catch
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
-            return
-        }
+    try {
+        $response = Invoke-RestAPICall -Uri $getDefinitionsUrl -Method "GET" -Verbose:$VerbosePreference
+    }
+    catch {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
+        return
+    }
 
-        if ($response.count -eq 0 )
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
-            return
-        }
-        
-        return $response.value[0]
+    if ($response.count -eq 0 ) {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
+        return
     }
+        
+    return $response.value[0]
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Get-BuildDefinitionById
-{
+Function Get-BuildDefinitionById {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
-        [int] $DefinitionId,
-
-		[pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [int] $DefinitionId
     )
-    
-	Begin
-    {
-		if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
-    }
-	End
-    {       
-		Write-Verbose "Retrieving the build definition from Id $DefinitionId..." 
-        $getUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$DefinitionId,$BuildApiVersion     
-        return Invoke-RestMethod -Credential $Credentials -Uri $getUrl -Method "GET"
-    }
+         
+    Write-Verbose "Retrieving the build definition from Id $DefinitionId..." 
+    $getUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $DefinitionId, $BuildApiVersion     
+    return Invoke-RestAPICall -Uri $getUrl -Method "GET" -Verbose:$VerbosePreference
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Get-BuildDefinition
-{
+Function Get-BuildDefinition {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
-        [string] $BuildDefinitionName,
-
-        [pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [string] $BuildDefinitionName
     )
     
-    Begin
-    {
-        if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}     
-    }
-    End
-    {
-        $info = Get-BuildDefinitionBasicInfo -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -BuildDefinitionName $BuildDefinitionName -Credentials $credentials
+    $info = Get-BuildDefinitionBasicInfo -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -BuildDefinitionName $BuildDefinitionName
 	
-        if ($info -ne $null -or $info -ne "")
-        {
-            return Get-BuildDefinitionById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $info.id -Credentials $credentials
-        }
+    if ($info -ne $null -or $info -ne "") {
+        return Get-BuildDefinitionById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $info.id
     }
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Get-BuildDefinitionsFromTeamProject
-{
+Function Get-BuildDefinitionsFromTeamProject {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(HelpMessage="Filters to definitions whose names equal this value. Append a * to filter to definitions whose names start with this value. For example: MS*.")]
+        [Parameter(HelpMessage = "Filters to definitions whose names equal this value. Append a * to filter to definitions whose names start with this value. For example: MS*.")]
         [string] $nameFilter,
 
-        [Parameter(HelpMessage="The type of the build definitions to retrieve. If not specified, all types will be returned.")]
-        [ValidateSet('build','xaml')]
-        [string] $typeFilter,
-
-		[pscredential] $Credentials = $null
+        [Parameter(HelpMessage = "The type of the build definitions to retrieve. If not specified, all types will be returned.")]
+        [ValidateSet('build', 'xaml')]
+        [string] $typeFilter
     )
-    
-	Begin
-    {
-		if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
-    }
-	End
-    {       
-		Write-Verbose "Retrieving build definitions from Team Project $TeamProjectName..." 
+             
+    Write-Verbose "Retrieving build definitions from Team Project $TeamProjectName..." 
 
-        $filters =""
-        if ($nameFilter) {$filters += "&name=$nameFilter"}
-        if ($typeFilter) {$filters += "&type=$typeFilter"}
+    $filters = ""
+    if ($nameFilter) {$filters += "&name=$nameFilter"}
+    if ($typeFilter) {$filters += "&type=$typeFilter"}
 
-        $getUrl = "{0}/{1}/_apis/build/definitions?api-version={2}{3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$filters     
-        return Invoke-RestMethod -Credential $Credentials -Uri $getUrl -Method "GET"
-    }
+    $getUrl = "{0}/{1}/_apis/build/definitions?api-version={2}{3}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion, $filters     
+    return Invoke-RestAPICall -Uri $getUrl -Method "GET" -Verbose:$VerbosePreference
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Update-BuildDefinition
-{
+Function Update-BuildDefinition {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [int] $DefinitionId,
 
-        [Parameter(mandatory=$true)]
-        [string] $BuildDefinitionJsonBody,
-
-		[pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [string] $BuildDefinitionJsonBody
     )
-    
-	Begin
-    {
-		if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
-    }
-	End
-    {       
-		Write-Verbose "Updating build definition '$DefinitionId' from Team Project '$TeamProjectName'..." 
+   
+    Write-Verbose "Updating build definition '$DefinitionId' from Team Project '$TeamProjectName'..." 
 
-        $updateDefinitionUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$DefinitionId,$BuildApiVersion
-        $method = "PUT"
-        $headers = @{"Content-Type"="application/json"}
-        $body=$BuildDefinitionJsonBody
-        return Invoke-RestMethod -Credential $credentials -Uri $updateDefinitionUrl -Method $method -Headers $headers -Body ([System.Text.Encoding]::UTF8.GetBytes($body))
-    }
+    $updateDefinitionUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $DefinitionId, $BuildApiVersion
+    $method = "PUT"
+    $body = $BuildDefinitionJsonBody
+    return Invoke-RestAPICall -Uri $updateDefinitionUrl -Method $method -Body ([System.Text.Encoding]::UTF8.GetBytes($body)) -Verbose:$VerbosePreference
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Rename-BuildDefinition
-{
+Function Rename-BuildDefinition {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $BuildDefinitionName,
 	
-		[Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $NewName
     )
-    
-	Begin
-    {
-        $credentials = Get-RestApiCredentials
-    }
-    End
-    {   
-		Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
-        $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$BuildDefinitionName
+  
+    Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
+    $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion, $BuildDefinitionName
         
-        try
-        {
-            $response = Invoke-RestMethod -Credential $credentials -Uri $getDefinitionsUrl -Method "GET" 
-        }
-        catch
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
-            return
-        }
+    try {
+        $response = Invoke-RestAPICall -Uri $getDefinitionsUrl -Method "GET" -Verbose:$VerbosePreference
+    }
+    catch {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
+        return
+    }
 
-        if ($response.count -eq 0 )
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
-            return
-        }
-        
-		$buildDef = $response.value[0]
-		$buildDef.name = $NewName
-		
-		$putDefinitionUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$($buildDef.id),$BuildApiVersion
-		$method = "PUT"
-		$headers = @{"Content-Type"="application/json"}
-		$body=ConvertTo-Json $buildDef -Depth 20
-		
-		try
-        {
-            $response = Invoke-RestMethod -Credential $credentials -Uri $putDefinitionUrl -Method $method -Headers $headers -Body ([System.Text.Encoding]::UTF8.GetBytes($body))
-        }
-        catch
-        {
-            Write-Error "Fail renaming ""$BuildDefinitionName"" to ""$NewName"". Details: $_.Exception.Message."
-            return
-        }
-        Write-Output "Buid definition ""$BuildDefinitionName"" renamed to ""$NewName""."
+    if ($response.count -eq 0 ) {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
+        return
     }
+        
+    $buildDef = $response.value[0]
+    $buildDef.name = $NewName
+		
+    $putDefinitionUrl = "{0}/{1}/_apis/build/definitions/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $($buildDef.id), $BuildApiVersion
+    $method = "PUT"
+    $body = ConvertTo-Json $buildDef -Depth 20 -Compress
+		
+    try {
+        $response = Invoke-RestAPICall -Uri $putDefinitionUrl -Method $method -Body ([System.Text.Encoding]::UTF8.GetBytes($body)) -Verbose:$VerbosePreference
+    }
+    catch {
+        Write-Error "Fail renaming ""$BuildDefinitionName"" to ""$NewName"". Details: $_.Exception.Message."
+        return
+    }
+    Write-Output "Buid definition ""$BuildDefinitionName"" renamed to ""$NewName""."
+
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Queue-Build
-{
+Function Queue-Build {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $BuildDefinitionName,
 
-        [ValidateSet("manual","checkInShelveset")]
+        [ValidateSet("manual", "checkInShelveset")]
         [string] $Reason = "manual",
 
         [string] $SourceBranch = "",
         [switch] $WaitUntilBuildComplete
     )
+           
+    Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
+    $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion, $BuildDefinitionName
+        
+    try {
+        $response = Invoke-RestAPICall -Uri $getDefinitionsUrl -Method "GET" -Verbose:$VerbosePreference
+    }
+    catch {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
+        return
+    }
+
+    if ($response.count -eq 0 ) {
+        Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
+        return
+    }
+        
+    $Id = $response.value.id
+
+    Queue-BuildByDefinitionId -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $Id -Reason $Reason -SourceBranch $SourceBranch -WaitUntilBuildComplete:$WaitUntilBuildComplete.IsPresent -Verbose
     
-	Begin
-    {
-        $credentials = Get-RestApiCredentials     
-    }
-	End
-    {       
-		Write-Verbose "Retrieving the id of build definition $BuildDefinitionName..." 
-        $getDefinitionsUrl = "{0}/{1}/_apis/build/definitions?api-version={2}&name={3}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion,$BuildDefinitionName
-        
-        try
-        {
-            $response = Invoke-RestMethod -Credential $credentials -Uri $getDefinitionsUrl -Method "GET" 
-        }
-        catch
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted. Details: $_.Exception.Message."
-            return
-        }
-
-        if ($response.count -eq 0 )
-        {
-            Write-Error "Build Definition ""$BuildDefinitionName"" not found. Operation aborted."
-            return
-        }
-        
-		$Id = $response.value.id
-
-        Queue-BuildByDefinitionId -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -DefinitionId $Id -Reason $Reason -SourceBranch $SourceBranch -WaitUntilBuildComplete:$WaitUntilBuildComplete.IsPresent -Verbose -Credentials $credentials
-    }
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Queue-BuildByDefinitionId
-{
+Function Queue-BuildByDefinitionId {
     [CmdletBinding()]
     Param (
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [int] $DefinitionId,
 
-        [ValidateSet("manual","checkInShelveset")]
+        [ValidateSet("manual", "checkInShelveset")]
         [string] $Reason = "manual",
 
         [string] $SourceBranch = "",
-        [switch] $WaitUntilBuildComplete,
-
-        [pscredential] $Credentials = $null
+        [switch] $WaitUntilBuildComplete
     )
-    Begin
-    {
-		if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
+      
+    Write-Verbose "Queueing a new build for the build definition with Id $DefinitionId..." 
+    $queueBuildUrl = "{0}/{1}/_apis/build/builds?api-version={2}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion  
+        
+    $bodyObject = @{
+        "definition" = @{"id" = $DefinitionId};
+        "reason" = "$Reason";
+        "sourceBranch" = "$SourceBranch"
     }
-    End
-    {       
-		Write-Verbose "Queueing a new build for the build definition with Id $DefinitionId..." 
-        $queueBuildUrl = "{0}/{1}/_apis/build/builds?api-version={2}" -f $CollectionUrl,$TeamProjectName,$BuildApiVersion  
+    $body = ConvertTo-Json $bodyObject -Depth 20 -Compress
         
-        $bodyObject = @{
-            "definition" = @{"id"=$DefinitionId};
-            "reason"="$Reason";
-            "sourceBranch"="$SourceBranch"
-        }
-        $body=ConvertTo-Json $bodyObject -Depth 20
-        $headers = @{"Content-Type"="application/json"}  
-        
-        $response = Invoke-RestMethod -Credential $credentials -Uri $queueBuildUrl -Headers $headers -Method "Post" -Body $body
-        $buildId = $response.id
-        $buildStatus = $response.status
+    $response = Invoke-RestAPICall -Uri $queueBuildUrl -Method "Post" -Body $body -Verbose:$VerbosePreference
+    $buildId = $response.id
+    $buildStatus = $response.status
 
-        if ($WaitUntilBuildComplete.IsPresent)
-        {
-            While( $buildStatus -ne "completed" )
-            {
-                Start-Sleep -Seconds $WaitBuildSeconds
-                $build = Get-BuildById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -BuildId $buildId -Credentials $Credentials
-                $buildStatus = $build.status
-            }
-            return $build
+    if ($WaitUntilBuildComplete.IsPresent) {
+        While ( $buildStatus -ne "completed" ) {
+            Start-Sleep -Seconds $WaitBuildSeconds
+            $build = Get-BuildById -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -BuildId $buildId
+            $buildStatus = $build.status
         }
-        else
-        {
-            return $response
-        }
+        return $build
+    }
+    else {
+        return $response
     }
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
-Function Get-BuildById
-{
+Function Get-BuildById {
     param(
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $CollectionUrl,
 
-        [Parameter(mandatory=$true)]
+        [Parameter(mandatory = $true)]
         [string] $TeamProjectName,
 
-        [Parameter(mandatory=$true)]
-        [string] $BuildId,
-
-        [pscredential] $Credentials = $null
+        [Parameter(mandatory = $true)]
+        [string] $BuildId
     )
-    Begin
-    {
-        if (!$Credentials)
-		{
-			$Credentials = Get-RestApiCredentials 
-		}
-    }
-    End
-    {
-        $getdUrl = "{0}/{1}/_apis/build/builds/{2}?api-version={3}" -f $CollectionUrl,$TeamProjectName,$BuildId,$BuildApiVersion        
-        $response = Invoke-RestMethod -Credential $Credentials -Uri $getdUrl -Method "Get"
-        return $response
-    }
+
+    $getdUrl = "{0}/{1}/_apis/build/builds/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $BuildId, $BuildApiVersion        
+    $response = Invoke-RestAPICall -Uri $getdUrl -Method "Get" -Verbose:$VerbosePreference
+    return $response
 }

@@ -12,7 +12,7 @@ schema: 2.0.0
 
 ```
 Update-BuildDefinition [-CollectionUrl] <String> [-TeamProjectName] <String> [-DefinitionId] <Int32>
- [-BuildDefinitionJsonBody] <String> [[-Credentials] <PSCredential>]
+ [-BuildDefinitionJsonBody] <String>
 ```
 
 ## DESCRIPTION
@@ -84,21 +84,6 @@ Aliases:
 
 Required: True
 Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Credentials
-{{Fill Credentials Description}}
-
-```yaml
-Type: PSCredential
-Parameter Sets: (All)
-Aliases: 
-
-Required: False
-Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
