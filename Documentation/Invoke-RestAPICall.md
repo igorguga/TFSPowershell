@@ -15,7 +15,7 @@ Invoke-RestAPICall [-Uri] <String> [-Method] <String> [[-Headers] <Object>] [[-B
 ```
 
 ## DESCRIPTION
-Abstract the credentials from the caller, using the credentials from the current user or the credential stored using the Set-RestApiCredentials function.
+Abstracts the credentials from the caller, using the credentials from the current user or the credential stored using the Set-RestApiCredentials function.
 
 ## EXAMPLES
 

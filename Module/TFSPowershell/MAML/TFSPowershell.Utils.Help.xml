@@ -77,11 +77,11 @@
 <command:details><command:name>Invoke-RestAPICall</command:name>
 <command:verb>Invoke</command:verb>
 <command:noun>RestAPICall</command:noun>
-<maml:description><maml:para>
+<maml:description><maml:para>Calls a TFS/VSTS REST API.
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>{{Fill in the Description}}
+<maml:description><maml:para>Abstracts the credentials from the caller, using the credentials from the current user or the credential stored using the Set-RestApiCredentials function.
 </maml:para>
 </maml:description>
 <command:syntax><command:syntaxItem><maml:name>Invoke-RestAPICall</maml:name>
