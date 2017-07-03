@@ -76,3 +76,7 @@ The functions are grouped in the following Modules:
   ### [Set-BuildDefinitionPermissionsByTeamProjectOMApi](Set-BuildDefinitionPermissionsByTeamProjectOMApi.md)
   ### [Set-IterationPermissions](Set-IterationPermissions.md)
   ### [Set-SourceControlPermissions](Set-SourceControlPermissions.md)
+
+- ## Service EndPoints *(uses TFS/VSTS REST APIs)*
+  ### [Get-ServiceEndpoints](Get-ServiceEndpoints.md)
+  ### [New-ServiceEndpoint](New-ServiceEndpoint.md)

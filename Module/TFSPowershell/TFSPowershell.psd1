@@ -12,7 +12,7 @@
 RootModule = 'TFSPowershell.Tfs'
 
 # Version number of this module.
-ModuleVersion = '0.2.0'
+ModuleVersion = '0.3.0'
 
 # ID used to uniquely identify this module
 GUID = '245d95e7-7b7f-4237-b2ba-db410a10b894'
@@ -68,7 +68,8 @@ NestedModules = @('TFSPowershell.Security',
                'TFSPowershell.Workitems', 
                'TFSPowershell.SourceControl', 
                'TFSPowershell.Build', 
-               'TFSPowershell.Utils')
+               'TFSPowershell.Utils',
+               'TFSPowershell.ServiceEndpoint')
 
 
 # Cmdlets to export from this module
