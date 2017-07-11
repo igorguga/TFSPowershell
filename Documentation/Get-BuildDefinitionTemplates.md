@@ -1,31 +1,31 @@
 ---
-external help file: TFSPowershell.ServiceEndpoint.Help.xml
+external help file: TFSPowershell.Build.Help.xml
 online version: 
 schema: 2.0.0
 ---
 
-# Get-ServiceEndpoints
+# Get-BuildDefinitionTemplates
 
 ## SYNOPSIS
-Gets the service enpoints for a given Team Project.
+Gets all build definition templates of a given Team Project.
 
 ## SYNTAX
 
 ```
-Get-ServiceEndpoints [-CollectionUrl] <String> [-TeamProjectName] <String>
+Get-BuildDefinitionTemplates [-CollectionUrl] <String> [-TeamProjectName] <String>
 ```
 
 ## DESCRIPTION
-Gets the service enpoints for a given Team Project.
+Gets all build definition templates of a given Team Project.
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> Get-ServiceEndpoints -CollectionUrl https://myvisual.visualstudio.com -TeamProject myTeamproject
+PS C:\> Get-BuildDefinitionTemplates -CollectionUrl https://myvisual.visualstudio.com -TeamProject myTeamproject
 ```
 
-
+Retrieves all Build Definition Templates from "myTeamproject" team project.
 
 ## PARAMETERS
 
@@ -39,7 +39,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -54,7 +54,7 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -62,12 +62,7 @@ Accept wildcard characters: False
 
 ## INPUTS
 
-### None
-
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 

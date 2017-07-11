@@ -413,3 +413,111 @@ Function Get-BuildById {
     $response = Invoke-RestAPICall -Uri $getdUrl -Method "Get" -Verbose:$VerbosePreference
     return $response
 }
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Get-BuildDefinitionTemplates
+{
+    param(
+        [Parameter(mandatory = $true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory = $true)]
+        [string] $TeamProjectName
+    )
+
+    $getdUrl = "{0}/{1}/_apis/build/definitions/templates?api-version={2}" -f $CollectionUrl, $TeamProjectName, $BuildApiVersion        
+    $response = Invoke-RestAPICall -Uri $getdUrl -Method "Get" -Verbose:$VerbosePreference
+    return $response
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Get-BuildDefinitionTemplate {
+    param(
+        [Parameter(mandatory = $true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory = $true)]
+        [string] $TeamProjectName,
+
+        [Parameter(mandatory = $true)]
+        [string] $BuildDefTemplateId
+    )
+
+    $getdUrl = "{0}/{1}/_apis/build/definitions/templates/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $BuildDefTemplateId, $BuildApiVersion        
+    $response = Invoke-RestAPICall -Uri $getdUrl -Method "Get" -Verbose:$VerbosePreference
+    return $response
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function New-BuildDefinitionTemplate{
+    [CmdletBinding()]
+    Param (
+        [Parameter(mandatory = $true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory = $true)]
+        [string] $TeamProjectName,
+
+        [Parameter(mandatory = $true)]
+        [string] $TemplateId,
+
+        [Parameter(mandatory = $true)]
+        [string] $NewBuildDefTemplateJson
+    )
+    
+    # Validating builddeftemplate Json body
+    try {
+        ConvertFrom-Json $NewBuildDefTemplateJson -ErrorAction Stop
+        $body = ([System.Text.Encoding]::UTF8.GetBytes($NewBuildDefTemplateJson))
+    } 
+    catch {
+        $error = $_.Exception.Message
+        Write-Error "The inputed string on parameter 'NewBuildDefTemplateJson' is not a valid json. Details: ""$error""."
+        return
+    }
+
+    Write-Verbose "Creating the new build definition template ..." 
+    $newDefinitionUrl = "{0}/{1}/_apis/build/definitions/templates/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $TemplateId, $BuildApiVersion
+    $method = "PUT"
+    $newBuildDefTemplate = Invoke-RestAPICall -Uri $newDefinitionUrl -Method $method -Body $body -Verbose:$VerbosePreference
+
+    return $newBuildDefTemplate
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Update-BuildDefinitionTemplate{
+    [CmdletBinding()]
+    Param (
+        [Parameter(mandatory = $true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory = $true)]
+        [string] $TeamProjectName,
+
+        [Parameter(mandatory = $true)]
+        [string] $TemplateId,
+
+        [Parameter(mandatory = $true)]
+        [string] $UpdatedBuildDefTemplateJson
+    )
+
+    return New-BuildDefinitionTemplate -CollectionUrl $CollectionUrl -TeamProjectName $TeamProjectName -TemplateId $TemplateId -NewBuildDefTemplateJson $UpdatedBuildDefTemplateJson -Verbose:$VerbosePreference
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Build.Help.xml
+Function Remove-BuildDefinitionTemplate {
+    param(
+        [Parameter(mandatory = $true)]
+        [string] $CollectionUrl,
+
+        [Parameter(mandatory = $true)]
+        [string] $TeamProjectName,
+
+        [Parameter(mandatory = $true)]
+        [string] $BuildDefTemplateId
+    )
+
+    $getdUrl = "{0}/{1}/_apis/build/definitions/templates/{2}?api-version={3}" -f $CollectionUrl, $TeamProjectName, $BuildDefTemplateId, $BuildApiVersion        
+    $response = Invoke-RestAPICall -Uri $getdUrl -Method "DELETE" -Verbose:$VerbosePreference
+    return $response
+}

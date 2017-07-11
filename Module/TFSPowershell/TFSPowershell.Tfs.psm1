@@ -1,3 +1,6 @@
+#Rest API version to be used
+$BuildApiVersion = "1.0"
+
 #Assemblies folder for TFS Object Model Client
 $rootPath = $PSScriptRoot
 $AssembliesDir = "$rootPath\Assemblies"
@@ -46,6 +49,19 @@ Function Get-TeamProject
     # Get Team Project
     $cssService = $Tfs.GetService("Microsoft.TeamFoundation.Server.ICommonStructureService4")
     Write-Output $cssService.GetProjectFromName($TeamProjectName)
+}
+
+# .ExternalHelp .\MAML\TFSPowershell.Tfs.Help.xml
+Function Get-TeamProjects
+{
+    [CmdletBinding()]
+    Param (
+        [string] $CollectionUrl
+    )
+    
+    $getdUrl = "{0}/_apis/projects?api-version={1}" -f $CollectionUrl, $BuildApiVersion        
+    $response = Invoke-RestAPICall -Uri $getdUrl -Method "Get" -Verbose:$VerbosePreference
+    return $response
 }
 
 # .ExternalHelp .\MAML\TFSPowershell.Tfs.Help.xml

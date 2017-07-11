@@ -13,6 +13,7 @@ The functions are grouped in the following Modules:
   ### [New-TFSAlert](New-TFSAlert.md)
   ### [Remove-TFSAlert](Remove-TFSAlert.md)
   ### [Remove-TFSAlertById](Remove-TFSAlertById.md)
+  ### [Get-TeamProjects](Get-TeamProjects.md) <sup>new (uses REST API)<sup>
 
 - ## Source Control
   ### [Add-FolderToTFVC](Add-FolderToTFVC.md)
@@ -39,6 +40,11 @@ The functions are grouped in the following Modules:
   ### [Remove-BuildDefinitionById](Remove-BuildDefinitionById.md)
   ### [Rename-BuildDefinition](Rename-BuildDefinition.md)
   ### [Update-BuildDefinition](Update-BuildDefinition.md)
+  ### [Get-BuildDefinitionTemplate](Get-BuildDefinitionTemplate.md) <sup>new</sup>
+  ### [Get-BuildDefinitionTemplates](Get-BuildDefinitionTemplates.md) <sup>new</sup>
+  ### [New-BuildDefinitionTemplate](New-BuildDefinitionTemplate.md) <sup>new</sup>
+  ### [Remove-BuildDefinitionTemplate](Remove-BuildDefinitionTemplate.md) <sup>new</sup>
+  ### [Update-BuildDefinitionTemplate](Update-BuildDefinitionTemplate.md) <sup>new</sup>
 
 - ## Utils
   ### [Get-RestApiCredentials](Get-RestApiCredentials.md)

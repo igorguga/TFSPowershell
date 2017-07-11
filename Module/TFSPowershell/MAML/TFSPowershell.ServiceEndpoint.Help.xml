@@ -72,7 +72,7 @@
 </maml:alertSet>
 <command:examples><command:example><maml:title>Example 1</maml:title>
 <dev:code>PS C:\&gt; Get-ServiceEndpoints -CollectionUrl https://myvisual.visualstudio.com -TeamProject myTeamproject</dev:code>
-<dev:remarks><maml:para>{{ Add example description here }}
+<dev:remarks><maml:para>
 </maml:para>
 </dev:remarks>
 </command:example>
